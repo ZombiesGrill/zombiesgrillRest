@@ -1,0 +1,263 @@
+/* Importación de tipografías */
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@1,700&display=swap');
+
+/* ----------------------------------------- */
+/* Estilos generales */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'PT Serif', serif;
+    background-color: #f6e7d8;
+    color: #2e2b26;
+}
+
+/* ----------------------------------------- */
+/* Header y navegación */
+header {
+    text-align: center;
+    padding: 5px;
+    height: 100px;
+    background-color: #2e2b26;
+    color: #f6e7d8;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 5px 0;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #e69b64;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2e2b26;
+    padding: 10px 10px;
+}
+
+.logo img {
+    width: 90px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f6e7d8;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #c977c4;
+}
+
+
+
+/* Ajuste de márgenes para que el contenido no quede detrás de la barra */
+.content {
+    margin-top: 60px;
+    display: flex;
+    flex: 1;
+    /* Esto hace que el contenido ocupe el espacio disponible restante */
+}
+
+/* Pantalla dividida en tres */
+.split {
+    width: 33.33%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Primera sección: Imagen */
+.left {
+    background-color: #333;
+}
+
+.left img {
+    width: 80%;
+    border-radius: 10px;
+    transform: rotate(-10deg);
+    transition: transform 0.5s ease;
+}
+
+.left img:hover {
+    transform: rotate(10deg);
+}
+
+/* Segunda sección: Texto con diferentes tipografías */
+.center {
+    background-color: #444;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.center h1 {
+    font-size: 4em;
+    font-family: 'Impact', sans-serif;
+    color: #df6818;
+    animation: bounce 2s infinite alternate;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-20px);
+    }
+}
+
+.center h2 {
+    font-size: 2em;
+    font-family: 'Comic Sans MS', cursive;
+    color: #ffffff;
+    margin: 20px 0;
+}
+
+.center p {
+    font-size: 1.2em;
+    font-family: 'Georgia', serif;
+    color: #fff;
+    text-align: center;
+}
+
+/* Tercera sección: Google Maps */
+.right {
+    background-color: #4c1212;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Animaciones de Triángulos, Círculos y Cuadrados */
+.shape {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.2);
+    animation: moveShape 8s infinite ease-in-out;
+}
+
+.shape.circle {
+    border-radius: 50%;
+}
+
+.shape.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid rgba(255, 255, 255, 0.2);
+}
+
+.shape.triangle {
+    width: -30;
+    height: 30;
+    border-left: 70px solid transparent;
+    border-bottom: 90px solid rgba(255, 255, 255, 0.2);
+}
+
+.shape.square {
+    width: 100px;
+    height: 100px;
+}
+
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    .subseccion {
+        padding: 15px;
+    }
+
+    .footer {
+        background-color: rgba(126, 42, 25, 0.78);
+        color: #ffffff;
+        padding: 20px 0;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .footer-section {
+        flex: 1 1 30%;
+        /* Cada sección ocupará un tercio del espacio */
+        margin: 10px;
+    }
+
+    .footer-section h4 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #f4a261;
+        /* Color resaltado */
+    }
+
+    .footer-section p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .social-icons a img {
+        width: 24px;
+        height: 24px;
+        transition: transform 0.3s ease;
+    }
+
+    .social-icons a img:hover {
+        transform: scale(1.2);
+    }
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 20px;
+        border-top: 1px solid #444;
+        padding-top: 10px;
+        font-size: 12px;
+        color: #aaa;
+    }
+}
